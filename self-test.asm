@@ -15,80 +15,80 @@
 ; * Created 2021/12/12                                                           *
 ; ********************************************************************************
 
- 
-                   SPEAKER  .eq $C030 ; Toggle speaker
-                   SWIOAK   .eq $C061 ; Open-Apple Key
-                   SWISAK   .eq $C062 ; Solid-Apple Key
- 
-                   INIT     .eq $FB2F
-                   HOME     .eq $FC58 ; 
-                   CROUT    .eq $FD8E ; output CR
-                   PRHEX    .eq $FDE3
- 
-                   BNKRO11  .eq $C080 ; Read RAM, no write,  bank 2
-                   BNKRW01  .eq $C081 ; Read ROM, write RAM, bank 2
-                   BNKRO01  .eq $C082 ; Read ROM, no write,  bank 2
-                   BNKRW11  .eq $C083 ; Read RAM, write RAM, bank 2
-                   BNKRO10  .eq $C088 ; Read RAM, no write,  bank 1
-                   BNKRW00  .eq $C089 ; Read ROM, write RAM, bank 1
-                   BNKRO00  .eq $C08A ; Read ROM, no write,  bank 1
-                   BNKRW10  .eq $C08B ; Read RAM, write RAM, bank 1
-                   RDBNK2ST .eq $C011 ; bit 7 is set if bank 2 is selected, else bank 1
-                   RDRAMST  .eq $C012 ; bit 7 is set if reading RAM, else reading ROM 
- 
-                   RAMRDSW0 .eq $C002 ; Read main memory
-                   RAMRDSW1 .eq $C003 ; Read auxiliary memory
-                   RAMRDST  .eq $C013 ; Status in bit 7
- 
-                   RAMWRSW0 .eq $C004 ; Write main memory
-                   RAMWRSW1 .eq $C005 ; Write auxiliary memory
-                   RAMWRST  .eq $C014 ; Write main memory
- 
-                   C1ROMSW0 .eq $C006 ; Enable slot ROM from $C100-$CFFF
-                   C1ROMSW1 .eq $C007 ; Enable main ROM from $C100-$CFFF
-                   C1ROMST  .eq $C015 ; Read C1ROM switch
- 
-                   ALTZPSW0 .eq $C008 ; ALTZP: use main stack and zp
-                   ALTZPSW1 .eq $C009 ; ALTZP: use auxiliary stack and zp
-                   ALTZPST  .eq $C016 ; Read ALTZP switch
- 
-                   C3ROMSW0 .eq $C00A ; Enable main ROM from $C300-$C3FF
-                   C3ROMSW1 .eq $C00B ; Enable slot ROM from $C300-$C3FF
-                   C3ROMST  .eq $C017 ; 
-                   
-                   STO80SW0 .eq $C000 ; 80STORE: use RAMRD, RAMWR
-                   STO80SW1 .eq $C001 ; 80STORE: access display page
-                   STO80ST  .eq $C018 ; 80Store: Read 80Store Switch.
- 
-                   TEXTSW0  .eq $C050 ; Text: Text mode off, graghics on.
-                   TEXTSW1  .eq $C051 ; Text: Text mode on, graghics on.
-                   TEXTST   .eq $C01A ; Text: Read text/graphics switch.
- 
-                   MIXEDSW0 .eq $C052 ; Mixed: Mixed text/graphics mode off.
-                   MIXEDSW1 .eq $C053 ; Mixed: Mixed text/graphics mode on. Applicable only in graphics mode.
-                   MIXEDST  .eq $C01B ; Mixed: Read mixed text/graphics switch.
- 
-                   PAGE2SW0 .eq $C054 ; Page2: Display page one.
-                   PAGE2SW1 .eq $C055 ; Page2: Display page two.
-                   PAGE2ST  .eq $C01C ; Page2: Read page display switch.
- 
-                   HIRESSW0 .eq $C056 ; HiRes: Hi-res mode off.
-                   HIRESSW1 .eq $C057 ; HiRes: Hi-res mode on.
-                   HIRESST  .eq $C01D ; HiRes: Read HiRes switch.
- 
-                   ALTCHSW0 .eq $C00E ; AltCharSet: Primary character set
-                   ALTCHSW1 .eq $C00F ; AltCharSet: Alternate character set off
-                   ALTCHST  .eq $C01E ; AltCharSet: Read AltCharSet switch.
- 
-                   COL80SW0 .eq $C00C ; 80Col: 80-column display off
-                   COL80SW1 .eq $C00D ; 80Col: 80-column display on.
-                   COL80ST  .eq $C01F ; 80Col: Read 80 column switch.
- 
-                   CDCHK    .eq $C400 ; Checksum for CD-ROM
-                   EFCHK    .eq $F7FF ; Checksum for EF-ROM
- 
-                   CHECKFLG .eq $C7EE ; Default switches status (from $C011 to $C018)
-                   ERRARR   .eq $C750 ; Errors string list
+
+                  SPEAKER  .eq $C030 ; Toggle speaker
+                  SWIOAK   .eq $C061 ; Open-Apple Key
+                  SWISAK   .eq $C062 ; Solid-Apple Key
+
+                  INIT     .eq $FB2F
+                  HOME     .eq $FC58 ;
+                  CROUT    .eq $FD8E ; output CR
+                  PRHEX    .eq $FDE3
+
+                  BNKRO11  .eq $C080 ; Read RAM, no write,  bank 2
+                  BNKRW01  .eq $C081 ; Read ROM, write RAM, bank 2
+                  BNKRO01  .eq $C082 ; Read ROM, no write,  bank 2
+                  BNKRW11  .eq $C083 ; Read RAM, write RAM, bank 2
+                  BNKRO10  .eq $C088 ; Read RAM, no write,  bank 1
+                  BNKRW00  .eq $C089 ; Read ROM, write RAM, bank 1
+                  BNKRO00  .eq $C08A ; Read ROM, no write,  bank 1
+                  BNKRW10  .eq $C08B ; Read RAM, write RAM, bank 1
+                  RDBNK2ST .eq $C011 ; bit 7 is set if bank 2 is selected, else bank 1
+                  RDRAMST  .eq $C012 ; bit 7 is set if reading RAM, else reading ROM
+
+                  RAMRDSW0 .eq $C002 ; Read main memory
+                  RAMRDSW1 .eq $C003 ; Read auxiliary memory
+                  RAMRDST  .eq $C013 ; Status in bit 7
+
+                  RAMWRSW0 .eq $C004 ; Write main memory
+                  RAMWRSW1 .eq $C005 ; Write auxiliary memory
+                  RAMWRST  .eq $C014 ; Write main memory
+
+                  C1ROMSW0 .eq $C006 ; Enable slot ROM from $C100-$CFFF
+                  C1ROMSW1 .eq $C007 ; Enable main ROM from $C100-$CFFF
+                  C1ROMST  .eq $C015 ; Read C1ROM switch
+
+                  ALTZPSW0 .eq $C008 ; ALTZP: use main stack and zp
+                  ALTZPSW1 .eq $C009 ; ALTZP: use auxiliary stack and zp
+                  ALTZPST  .eq $C016 ; Read ALTZP switch
+
+                  C3ROMSW0 .eq $C00A ; Enable main ROM from $C300-$C3FF
+                  C3ROMSW1 .eq $C00B ; Enable slot ROM from $C300-$C3FF
+                  C3ROMST  .eq $C017 ;
+
+                  STO80SW0 .eq $C000 ; 80STORE: use RAMRD, RAMWR
+                  STO80SW1 .eq $C001 ; 80STORE: access display page
+                  STO80ST  .eq $C018 ; 80Store: Read 80Store Switch.
+
+                  TEXTSW0  .eq $C050 ; Text: Text mode off, graghics on.
+                  TEXTSW1  .eq $C051 ; Text: Text mode on, graghics on.
+                  TEXTST   .eq $C01A ; Text: Read text/graphics switch.
+
+                  MIXEDSW0 .eq $C052 ; Mixed: Mixed text/graphics mode off.
+                  MIXEDSW1 .eq $C053 ; Mixed: Mixed text/graphics mode on. Applicable only in graphics mode.
+                  MIXEDST  .eq $C01B ; Mixed: Read mixed text/graphics switch.
+
+                  PAGE2SW0 .eq $C054 ; Page2: Display page one.
+                  PAGE2SW1 .eq $C055 ; Page2: Display page two.
+                  PAGE2ST  .eq $C01C ; Page2: Read page display switch.
+
+                  HIRESSW0 .eq $C056 ; HiRes: Hi-res mode off.
+                  HIRESSW1 .eq $C057 ; HiRes: Hi-res mode on.
+                  HIRESST  .eq $C01D ; HiRes: Read HiRes switch.
+
+                  ALTCHSW0 .eq $C00E ; AltCharSet: Primary character set
+                  ALTCHSW1 .eq $C00F ; AltCharSet: Alternate character set off
+                  ALTCHST  .eq $C01E ; AltCharSet: Read AltCharSet switch.
+
+                  COL80SW0 .eq $C00C ; 80Col: 80-column display off
+                  COL80SW1 .eq $C00D ; 80Col: 80-column display on.
+                  COL80ST  .eq $C01F ; 80Col: Read 80 column switch.
+
+                  CDCHK    .eq $C400 ; Checksum for CD-ROM
+                  EFCHK    .eq $F7FF ; Checksum for EF-ROM
+
+                  CHECKFLG .eq $C7EE ; Default switches status (from $C011 to $C018)
+                  ERRARR   .eq $C750 ; Errors string list
 
 
 ;;;;;;;;;;;;;;;;;
@@ -125,7 +125,7 @@ C41F   AA                   TAX              ; Clear X
 
 C420   BD 11 C0   LC420     LDA RDBNK2ST,X   ; Load switch value (bit 7)
 C423   5D EE C7             EOR CHECKFLG,X   ; Mask with default value
-C426   10 03                BPL LC42B        ; Bit7=0 
+C426   10 03                BPL LC42B        ; Bit7=0
 C428   20 13 C5             JSR MMUIOUERR    ;
 C42B   E8         LC42B     INX              ; increase test step
 C42C   E0 08                CPX #$08
@@ -207,27 +207,27 @@ C49F   85 08                STA $08          ; nMMU/IOU test flag
 
 C4A1   BD 1A C0   LC4A1     LDA TEXTST,X     ; Load switch value (bit 7)
 C4A4   5D F6 C7             EOR $C7F6,X      ; Mask with default value
-C4A7   10 03                BPL LC4AC        ; Bit7=0 
+C4A7   10 03                BPL LC4AC        ; Bit7=0
 C4A9   20 13 C5             JSR MMUIOUERR    ;
 C4AC   E8         LC4AC     INX              ; increase test step
 C4AD   E0 06                CPX #$06
 C4AF   D0 F0                BNE LC4A1
 
 ;; Test index: 6
-C4B1   8D 0D C0             STA COL80SW1     ; Set 80-column display on.   
-C4B4   2C 1F C0             BIT COL80ST      ; Load switch  
+C4B1   8D 0D C0             STA COL80SW1     ; Set 80-column display on.
+C4B4   2C 1F C0             BIT COL80ST      ; Load switch
 C4B7   8D 0C C0             STA COL80SW0     ; Put back 80-column display off
-C4BA   30 03                BMI LC4BF        ; Check if 80-display was on 
-C4BC   20 13 C5             JSR MMUIOUERR    ;                                 
-C4BF   E8         LC4BF     INX              ; Next test step                                 
+C4BA   30 03                BMI LC4BF        ; Check if 80-display was on
+C4BC   20 13 C5             JSR MMUIOUERR    ;
+C4BF   E8         LC4BF     INX              ; Next test step
 
 ;; Test index: 7
 C4C0   8D 0F C0             STA ALTCHSW1     ; Set alternate character set
 C4C3   2C 1E C0             BIT ALTCHST      ; Load switch
 C4C6   8D 0E C0             STA ALTCHSW0     ; Put back primary character set
-C4C9   30 03                BMI LC4CE        ; Check if alternate character set was on    
-C4CB   20 13 C5             JSR MMUIOUERR    ; 
-C4CE   E8         LC4CE     INX              ; Next test step    
+C4C9   30 03                BMI LC4CE        ; Check if alternate character set was on
+C4CB   20 13 C5             JSR MMUIOUERR    ;
+C4CE   E8         LC4CE     INX              ; Next test step
 
 ;; Test index: 8
 C4CF   8D 50 C0             STA TEXTSW0      ; Set text mode off
@@ -303,12 +303,12 @@ C543   A9 00                LDA #$00         ; ...$0001:$0000....
 C545   85 00                STA $00          ; ...
 C547   A8                   TAY              ; Y register is cleared
 C548   18         LC548     CLC              ; Checksum cycle
-C549   71 00                ADC ($00),Y      ; 
+C549   71 00                ADC ($00),Y      ;
 C54B   C8                   INY              ; When Y is 0...
 C54C   D0 FA                BNE LC548        ; ...then...
 C54E   E6 01                INC $01          ; ...turn ROM address page
-C550   A6 01                LDX $01          ; 
-C552   E0 C4                CPX #$C4         ; 
+C550   A6 01                LDX $01          ;
+C552   E0 C4                CPX #$C4         ;
 C554   D0 03                BNE LC559        ; Skip sum of CDCHK...
 C556   C8                   INY              ; ...go to CDCHK+1
 C557   D0 EF                BNE LC548        ; Always taken
@@ -318,7 +318,7 @@ C55D   D0 E9                BNE LC548        ;
 C55F   CD 00 C4   LC55F     CMP CDCHK        ; Compare checksum with CDCHK
 C562   F0 08                BEQ LC56C        ; If ok, go to next test, else...
 C564   A2 00                LDX #$00         ; Print "ROM:E8" error
-C566   20 40 C7             JSR PRINTERR     
+C566   20 40 C7             JSR PRINTERR
 C569   4C 69 C5   LC569     JMP LC569        ; Then die here.
 
 ;; EF-ROM checksum.
@@ -341,7 +341,7 @@ C582   D0 EB                BNE LC56F        ; If $01 is 0, test is finished...
 C584   CD FF F7             CMP EFCHK        ; ... compare checksum with CDCHK
 C587   F0 08                BEQ LC591        ; If ok, go to next test, else...
 C589   A2 08                LDX #$08         ; Print "ROM:E10" error
-C58B   20 40 C7             JSR PRINTERR       
+C58B   20 40 C7             JSR PRINTERR
 C58E   4C 8E C5   LC58E     JMP LC58E        ; Then die here.
 
 
@@ -352,7 +352,7 @@ C58E   4C 8E C5   LC58E     JMP LC58E        ; Then die here.
 ;; First write pass. Write #$00 in whole RAM (64k).
 ;; $C000-$CFFF is statically mapped to ROM
 ;; $D000-$DFFF can be bank switched, so same area is written two times, switching BNKRW10-BNKRW11
-C591   AD 50 C0   LC591     LDA TEXTSW0      ; 
+C591   AD 50 C0   LC591     LDA TEXTSW0      ;
 C594   AD 57 C0             LDA HIRESSW1     ; Enable Hi-Res mode
 C597   AD 52 C0             LDA MIXEDSW0     ; Disable mixed text/graphics mode
 C59A   AD 83 C0             LDA BNKRW11      ; Bank switch:
@@ -588,7 +588,7 @@ C74F   60                   RTS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ERRARR (binary data (error strings) ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; 
+;;
 ;; C750   "ROM:E8"
 ;; C757   "ROM:E10"
 ;; C760   "RAM: "
