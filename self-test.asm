@@ -16,80 +16,83 @@
 ; ********************************************************************************
 
 
-                  SPEAKER  .eq $C030 ; Toggle speaker
-                  SWIOAK   .eq $C061 ; Open-Apple Key
-                  SWISAK   .eq $C062 ; Solid-Apple Key
+                  SPEAKER   EQU $C030 ; Toggle speaker
+                  SWIOAK    EQU $C061 ; Open-Apple Key
+                  SWISAK    EQU $C062 ; Solid-Apple Key
 
-                  INIT     .eq $FB2F
-                  HOME     .eq $FC58 ;
-                  CROUT    .eq $FD8E ; output CR
-                  PRHEX    .eq $FDE3
+                  INIT      EQU $FB2F
+                  HOME      EQU $FC58 ;
+                  CROUT     EQU $FD8E ; output CR
+                  PRHEX     EQU $FDE3
+                  COUT1     EQU $FDF0
 
-                  BNKRO11  .eq $C080 ; Read RAM, no write,  bank 2
-                  BNKRW01  .eq $C081 ; Read ROM, write RAM, bank 2
-                  BNKRO01  .eq $C082 ; Read ROM, no write,  bank 2
-                  BNKRW11  .eq $C083 ; Read RAM, write RAM, bank 2
-                  BNKRO10  .eq $C088 ; Read RAM, no write,  bank 1
-                  BNKRW00  .eq $C089 ; Read ROM, write RAM, bank 1
-                  BNKRO00  .eq $C08A ; Read ROM, no write,  bank 1
-                  BNKRW10  .eq $C08B ; Read RAM, write RAM, bank 1
-                  RDBNK2ST .eq $C011 ; bit 7 is set if bank 2 is selected, else bank 1
-                  RDRAMST  .eq $C012 ; bit 7 is set if reading RAM, else reading ROM
+                  BNKRO11   EQU $C080 ; Read RAM, no write,  bank 2
+                  BNKRW01   EQU $C081 ; Read ROM, write RAM, bank 2
+                  BNKRO01   EQU $C082 ; Read ROM, no write,  bank 2
+                  BNKRW11   EQU $C083 ; Read RAM, write RAM, bank 2
+                  BNKRO10   EQU $C088 ; Read RAM, no write,  bank 1
+                  BNKRW00   EQU $C089 ; Read ROM, write RAM, bank 1
+                  BNKRO00   EQU $C08A ; Read ROM, no write,  bank 1
+                  BNKRW10   EQU $C08B ; Read RAM, write RAM, bank 1
+                  RDBNK2ST  EQU $C011 ; bit 7 is set if bank 2 is selected, else bank 1
+                  RDRAMST   EQU $C012 ; bit 7 is set if reading RAM, else reading ROM
 
-                  RAMRDSW0 .eq $C002 ; Read main memory
-                  RAMRDSW1 .eq $C003 ; Read auxiliary memory
-                  RAMRDST  .eq $C013 ; Status in bit 7
+                  RAMRDSW0  EQU $C002 ; Read main memory
+                  RAMRDSW1  EQU $C003 ; Read auxiliary memory
+                  RAMRDST   EQU $C013 ; Status in bit 7
 
-                  RAMWRSW0 .eq $C004 ; Write main memory
-                  RAMWRSW1 .eq $C005 ; Write auxiliary memory
-                  RAMWRST  .eq $C014 ; Write main memory
+                  RAMWRSW0  EQU $C004 ; Write main memory
+                  RAMWRSW1  EQU $C005 ; Write auxiliary memory
+                  RAMWRST   EQU $C014 ; Write main memory
 
-                  C1ROMSW0 .eq $C006 ; Enable slot ROM from $C100-$CFFF
-                  C1ROMSW1 .eq $C007 ; Enable main ROM from $C100-$CFFF
-                  C1ROMST  .eq $C015 ; Read C1ROM switch
+                  C1ROMSW0  EQU $C006 ; Enable slot ROM from $C100-$CFFF
+                  C1ROMSW1  EQU $C007 ; Enable main ROM from $C100-$CFFF
+                  C1ROMST   EQU $C015 ; Read C1ROM switch
 
-                  ALTZPSW0 .eq $C008 ; ALTZP: use main stack and zp
-                  ALTZPSW1 .eq $C009 ; ALTZP: use auxiliary stack and zp
-                  ALTZPST  .eq $C016 ; Read ALTZP switch
+                  ALTZPSW0  EQU $C008 ; ALTZP: use main stack and zp
+                  ALTZPSW1  EQU $C009 ; ALTZP: use auxiliary stack and zp
+                  ALTZPST   EQU $C016 ; Read ALTZP switch
 
-                  C3ROMSW0 .eq $C00A ; Enable main ROM from $C300-$C3FF
-                  C3ROMSW1 .eq $C00B ; Enable slot ROM from $C300-$C3FF
-                  C3ROMST  .eq $C017 ;
+                  C3ROMSW0  EQU $C00A ; Enable main ROM from $C300-$C3FF
+                  C3ROMSW1  EQU $C00B ; Enable slot ROM from $C300-$C3FF
+                  C3ROMST   EQU $C017 ;
 
-                  STO80SW0 .eq $C000 ; 80STORE: use RAMRD, RAMWR
-                  STO80SW1 .eq $C001 ; 80STORE: access display page
-                  STO80ST  .eq $C018 ; 80Store: Read 80Store Switch.
+                  STO80SW0  EQU $C000 ; 80STORE: use RAMRD, RAMWR
+                  STO80SW1  EQU $C001 ; 80STORE: access display page
+                  STO80ST   EQU $C018 ; 80Store: Read 80Store Switch.
 
-                  TEXTSW0  .eq $C050 ; Text: Text mode off, graghics on.
-                  TEXTSW1  .eq $C051 ; Text: Text mode on, graghics on.
-                  TEXTST   .eq $C01A ; Text: Read text/graphics switch.
+                  TEXTSW0   EQU $C050 ; Text: Text mode off, graghics on.
+                  TEXTSW1   EQU $C051 ; Text: Text mode on, graghics on.
+                  TEXTST    EQU $C01A ; Text: Read text/graphics switch.
 
-                  MIXEDSW0 .eq $C052 ; Mixed: Mixed text/graphics mode off.
-                  MIXEDSW1 .eq $C053 ; Mixed: Mixed text/graphics mode on. Applicable only in graphics mode.
-                  MIXEDST  .eq $C01B ; Mixed: Read mixed text/graphics switch.
+                  MIXEDSW0  EQU $C052 ; Mixed: Mixed text/graphics mode off.
+                  MIXEDSW1  EQU $C053 ; Mixed: Mixed text/graphics mode on. Applicable only in graphics mode.
+                  MIXEDST   EQU $C01B ; Mixed: Read mixed text/graphics switch.
 
-                  PAGE2SW0 .eq $C054 ; Page2: Display page one.
-                  PAGE2SW1 .eq $C055 ; Page2: Display page two.
-                  PAGE2ST  .eq $C01C ; Page2: Read page display switch.
+                  PAGE2SW0  EQU $C054 ; Page2: Display page one.
+                  PAGE2SW1  EQU $C055 ; Page2: Display page two.
+                  PAGE2ST   EQU $C01C ; Page2: Read page display switch.
 
-                  HIRESSW0 .eq $C056 ; HiRes: Hi-res mode off.
-                  HIRESSW1 .eq $C057 ; HiRes: Hi-res mode on.
-                  HIRESST  .eq $C01D ; HiRes: Read HiRes switch.
+                  HIRESSW0  EQU $C056 ; HiRes: Hi-res mode off.
+                  HIRESSW1  EQU $C057 ; HiRes: Hi-res mode on.
+                  HIRESST   EQU $C01D ; HiRes: Read HiRes switch.
 
-                  ALTCHSW0 .eq $C00E ; AltCharSet: Primary character set
-                  ALTCHSW1 .eq $C00F ; AltCharSet: Alternate character set off
-                  ALTCHST  .eq $C01E ; AltCharSet: Read AltCharSet switch.
+                  ALTCHSW0  EQU $C00E ; AltCharSet: Primary character set
+                  ALTCHSW1  EQU $C00F ; AltCharSet: Alternate character set off
+                  ALTCHST   EQU $C01E ; AltCharSet: Read AltCharSet switch.
 
-                  COL80SW0 .eq $C00C ; 80Col: 80-column display off
-                  COL80SW1 .eq $C00D ; 80Col: 80-column display on.
-                  COL80ST  .eq $C01F ; 80Col: Read 80 column switch.
+                  COL80SW0  EQU $C00C ; 80Col: 80-column display off
+                  COL80SW1  EQU $C00D ; 80Col: 80-column display on.
+                  COL80ST   EQU $C01F ; 80Col: Read 80 column switch.
 
-                  CDCHK    .eq $C400 ; Checksum for CD-ROM
-                  EFCHK    .eq $F7FF ; Checksum for EF-ROM
+                  EFCHK     EQU $F7FF ; Checksum for EF-ROM
 
-                  CHECKFLG .eq $C7EE ; Default switches status (from $C011 to $C018)
-                  ERRARR   .eq $C750 ; Errors string list
+                  ERRARR    EQU $C750 ; Errors string list
 
+                            ORG $C400
+
+; CD ROM checksum
+C400   1B         CDCHK     BYTE $1B
 
 ;;;;;;;;;;;;;;;;;
 ;; ENTRYPOINT  ;;
@@ -136,7 +139,7 @@ C42E   D0 F0                BNE LC420
 
 ;; Test index: 8
 C430   8D 8B C0             STA BNKRW10      ; Set bank 1 (and RAM read and write)
-C433   2C 11 C0             BIT BANKST       ; Load switch
+C433   2C 11 C0             BIT RDBNK2ST     ; Load switch
 C436   8D 83 C0             STA BNKRW11      ; Set back bank 2
 C439   10 03                BPL LC43E        ; Check if bank 1 (switch cleared)
 C43B   20 13 C5             JSR MMUIOUERR    ;
@@ -382,7 +385,7 @@ C5C9   85 01                STA $01          ; $D0xx
 C5CB   30 1B                BMI LC5E8        ; then go on.
 C5CD   C9 E0      LC5CD     CMP #$E0
 C5CF   D0 17                BNE LC5E8
-C5D1   2C 11 C0             BIT BANKST       ; Check if Bank 2 or 1
+C5D1   2C 11 C0             BIT RDBNK2ST     ; Check if Bank 2 or 1
 C5D4   10 0C                BPL LC5E2        ; if bank 1, switch back to bank 2 and go on with $Exxx
 C5D6   AD 8B C0             LDA BNKRW10      ; Bank switch:
 C5D9   AD 8B C0             LDA BNKRW10      ; read and write in RAM, use bank 1
@@ -427,7 +430,7 @@ C623   85 01                STA $01          ; $Dxxx
 C625   30 CF                BMI LC5F6        ; then go on.
 C627   C9 E0      LC627     CMP #$E0
 C629   D0 CB                BNE LC5F6
-C62B   2C 11 C0             BIT BANK         ; Check if Bank 2 or 1
+C62B   2C 11 C0             BIT RDBNK2ST     ; Check if Bank 2 or 1
 C62E   10 0C                BPL LC63C        ; if bank 1, switch back to bank 2 and go on with $Exxx
 C630   AD 8B C0             LDA BNKRW10      ; BANK SWITCH:
 C633   AD 8B C0             LDA BNKRW10      ; Read twice: read and write in RAM, use bank 1
@@ -467,7 +470,7 @@ C672   C9 FF                CMP #$FF         ; ..last page...
 C674   F0 2D                BEQ LC6A3        ; ... then test end
 C676   C9 CF                CMP #$CF         ; Skip $Cxxx...
 C678   D0 1D                BNE LC697        ; from test
-C67A   2C 11 C0             BIT BANK         ; Check if Bank 2 or 1
+C67A   2C 11 C0             BIT RDBNK2ST     ; Check if Bank 2 or 1
 C67D   10 0C                BPL LC68B        ; if bank 1, switch back to bank 2 and go on with $Exxx
 C67F   AD 8B C0             LDA BNKRW10      ; BANK SWITCH:
 C682   AD 8B C0             LDA BNKRW10      ; Read twice: read and write in RAM, use bank 1
@@ -588,21 +591,115 @@ C74F   60                   RTS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ERRARR (binary data (error strings) ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;; C750   "ROM:E8"
-;; C757   "ROM:E10"
-;; C760   "RAM: "
-;; C765   "KERNEL OK"
-;; C76F   "F13 "
-;; C774   "F12 "
-;; C779   "F11 "
-;; C77E   "F10 "
-;; C783   "F9 "
-;; C787   "F8 "
-;; C78B   "F7 "
-;; C78F   "F6 "
-;; C793   "MMU FLAG E4:"
-;; C7A0   "IOU FLAG E5:"
+
+; "ROM:E8"
+C750   D2         ERRARR    BYTE $D2
+C751   CF                   BYTE $CF
+C752   CD                   BYTE $CD
+C753   BA                   BYTE $BA
+C754   C5                   BYTE $C5
+C755   B8                   BYTE $B8
+C756   8D                   BYTE $8D
+C757   00                   BYTE $00
+; "ROM:E10"
+C758   D2                   BYTE $D2
+C759   CF                   BYTE $CF
+C75A   CD                   BYTE $CD
+C75B   BA                   BYTE $BA
+C75C   C5                   BYTE $C5
+C75D   B1                   BYTE $B1
+C75E   B0                   BYTE $B0
+C75F   8D                   BYTE $8D
+C760   00                   BYTE $00
+; "RAM: "
+C761   D2                   BYTE $D2
+C762   C1                   BYTE $C1
+C763   CD                   BYTE $CD
+C764   BA                   BYTE $BA
+C765   00                   BYTE $00
+; "KERNEL OK"
+C766   $CB                  BYTE $CB
+C767   $C5                  BYTE $C5
+C768   $D2                  BYTE $D2
+C769   $CE                  BYTE $CE
+C76A   $C5                  BYTE $C5
+C76B   $CC                  BYTE $CC
+C76C   $A0                  BYTE $A0
+C76D   $CF                  BYTE $CF
+C76E   $CB                  BYTE $CB
+C76F   $00                  BYTE $00
+; "F13 "
+C770   $C6                  BYTE $C6
+C771   $B1                  BYTE $B1
+C772   $B3                  BYTE $B3
+C773   $A0                  BYTE $A0
+C774   $00                  BYTE $00
+; "F12 "
+C775   $C6                  BYTE $C6
+C776   $B1                  BYTE $B1
+C777   $B2                  BYTE $B2
+C778   $A0                  BYTE $A0
+C779   $00                  BYTE $00
+; "F11 "
+C77A   $C6                  BYTE $C6
+C77B   $B1                  BYTE $B1
+C77C   $B1                  BYTE $B1
+C77D   $A0                  BYTE $A0
+C77E   $00                  BYTE $00
+; "F10 "
+C77F   $C6                  BYTE $C6
+C780   $B1                  BYTE $B1
+C781   $B0                  BYTE $B0
+C782   $A0                  BYTE $A0
+C783   $00                  BYTE $00
+; "F9 "
+C784   $C6                  BYTE $C6
+C785   $B9                  BYTE $B9
+C786   $A0                  BYTE $A0
+C787   $00                  BYTE $00
+; "F8 "
+C788   $C6                  BYTE $C6
+C789   $B8                  BYTE $B8
+C78A   $A0                  BYTE $A0
+C78B   $00                  BYTE $00
+; "F7 "
+C78C   $C6                  BYTE $C6
+C78D   $B7                  BYTE $B7
+C78E   $A0                  BYTE $A0
+C78F   $00                  BYTE $00
+; "F6 "
+C790   $C6                  BYTE $C6
+C791   $B6                  BYTE $B6
+C792   $A0                  BYTE $A0
+C793   $00                  BYTE $00
+; "MMU FLAG E4:"
+C794   $CD                  BYTE $CD
+C795   $CD                  BYTE $CD
+C796   $D5                  BYTE $D5
+C797   $A0                  BYTE $A0
+C798   $C6                  BYTE $C6
+C799   $CC                  BYTE $CC
+C79A   $C1                  BYTE $C1
+C79B   $C7                  BYTE $C7
+C79C   $A0                  BYTE $A0
+C79D   $C5                  BYTE $C5
+C79E   $B4                  BYTE $B4
+C79F   $BA                  BYTE $BA
+C7A0   $00                  BYTE $00
+; "IOU FLAG E5:"
+C7A1   $C9                  BYTE $C9
+C7A2   $CF                  BYTE $CF
+C7A3   $D5                  BYTE $D5
+C7A4   $A0                  BYTE $A0
+C7A5   $C6                  BYTE $C6
+C7A6   $CC                  BYTE $CC
+C7A7   $C1                  BYTE $C1
+C7A8   $C7                  BYTE $C7
+C7A9   $A0                  BYTE $A0
+C7AA   $C5                  BYTE $C5
+C7AB   $B5                  BYTE $B5
+C7AC   $BA                  BYTE $BA
+C7AD   $00                  BYTE $00
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -646,22 +743,22 @@ C7ED   60                   RTS
 
 
 ;; Default values of C011-C018 switches
-C7EE   80         CHECKFLG  ??? ; RDBNK2ST: default is bank 2
-C7EF   00                   BRK ; RDRAMST:  default is read from ROM
-C7F0   00                   BRK ; RAMRDST:  default is read from main memory
-C7F1   00                   BRK ; RAMWRST:  default is write to main memory
-C7F2   80                   ??? ; C1ROMST:  default is main ROM
-C7F3   00                   BRK ; ALTZPST:  default is use main stack and zp
-C7F4   00                   BRK ; C3ROMST:  default is main ROM
-C7F5   00                   BRK ; STO80ST:  default is use RAMRD, RAMWR
+C7EE   80         CHECKFLG  BYTE $80 ; RDBNK2ST: default is bank 2
+C7EF   00                   BYTE $00 ; RDRAMST:  default is read from ROM
+C7F0   00                   BYTE $00 ; RAMRDST:  default is read from main memory
+C7F1   00                   BYTE $00 ; RAMWRST:  default is write to main memory
+C7F2   80                   BYTE $80 ; C1ROMST:  default is main ROM
+C7F3   00                   BYTE $00 ; ALTZPST:  default is use main stack and zp
+C7F4   00                   BYTE $00 ; C3ROMST:  default is main ROM
+C7F5   00                   BYTE $00 ; STO80ST:  default is use RAMRD, RAMWR
 
 ;; Default values of C01A-C01F switches
-C7F6   80                   ??? ; TEXTST:  default is text on, graphics on
-C7F7   00                   BRK ; MIXEDST: default is mixed test/graphics off
-C7F8   00                   BRK ; PAGE2ST: deafult is display page one
-C7F9   00                   BRK ; HIRESST: default is Hi-Res mode off
-C7FA   00                   BRK ; ALTCHST: default is primary character set
-C7FB   00                   BRK ; COL80ST: default is 80-column display off
+C7F6   80                   BYTE $80 ; TEXTST:  default is text on, graphics on
+C7F7   00                   BYTE $00 ; MIXEDST: default is mixed test/graphics off
+C7F8   00                   BYTE $00 ; PAGE2ST: deafult is display page one
+C7F9   00                   BYTE $00 ; HIRESST: default is Hi-Res mode off
+C7FA   00                   BYTE $00 ; ALTCHST: default is primary character set
+C7FB   00                   BYTE $00 ; COL80ST: default is 80-column display off
 
 ;; Padding bytes?
 C7FC   00                   BRK
